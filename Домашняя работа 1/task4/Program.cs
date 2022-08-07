@@ -9,4 +9,10 @@ Console.WriteLine("Введите число b");
 int b = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число c");
 int c = Convert.ToInt32(Console.ReadLine());
-int max = 
+int result = a;
+if(b > result) result = b;
+if(c > result) result = c;
+Console.WriteLine("max = ");
+Console.WriteLine(result);
+
+
