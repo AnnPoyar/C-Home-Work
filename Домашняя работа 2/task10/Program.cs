@@ -10,3 +10,7 @@ if(number > 99 & number < 1000)
 {
     Console.WriteLine(number /10 % 10);
 }
+else
+{
+    Console.WriteLine("Число введено неверно");
+}
