@@ -5,13 +5,14 @@
 // 32679 -> 6
 
 Console.WriteLine("Введите число");
-int[]array = {Console.ReadLine()};
-int n = array.Length;
-if(n >= 3)
+string array = Console.ReadLine();
+string[] words = array.Split(new Char[] { ' ' });
+int size = array.Length;
+if (size >= 3)
 {
     Console.WriteLine(array[2]);
 }
 else
 {
-    Console.WriteLine(" Нет третьей цифры");
+    Console.WriteLine("третьей цифры нет");
 }
