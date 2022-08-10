@@ -6,7 +6,7 @@
 
 Console.WriteLine("Введите число");
 string array = Console.ReadLine();
-string[] words = array.Split(new Char[] { ' ' });
+string[] words = array.Split();
 int size = array.Length;
 if (size >= 3)
 {
