@@ -4,9 +4,12 @@
 // 5 -> 1, 8, 27, 64, 125
 
 Console.WriteLine("Введите число:");
-int N = Convert.ToInt32(Console.());
-for(int i = 1; i <= N; i++)
+int N = Convert.ToInt32(Console.ReadLine());
+if (N < 1)
 {
-    Console.WriteLine(i * i *i);
+    Console.WriteLine("Неверно введено число");
 }
-
+for(int i =1; i <= N; i++)
+{
+    Console.Write(i * i * i + " ");
+}
