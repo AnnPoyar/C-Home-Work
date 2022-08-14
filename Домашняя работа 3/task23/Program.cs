@@ -9,7 +9,7 @@ if (N < 1)
 {
     Console.WriteLine("Неверно введено число");
 }
-for(int i =1; i <= N; i++)
+for (int i = 1; i <= N; i++)
 {
     Console.Write(i * i * i + " ");
 }
