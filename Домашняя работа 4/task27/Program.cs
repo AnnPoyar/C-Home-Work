@@ -6,6 +6,7 @@
 
 // 9012 -> 12
 
+
 Console.WriteLine("Введите число: ");
 int A = Convert.ToInt32(Console.ReadLine());
 int sum = 0;
