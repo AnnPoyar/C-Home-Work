@@ -18,7 +18,7 @@ for (int i = 0; i < array.Length; i++)
     if (array[i] < min) min = array[i];
 }
 
-Console.WriteLine(max);
-Console.WriteLine(min);
+Console.WriteLine($"Максимальное число в массиве = {max}");
+Console.WriteLine($"Минимальное число в массиве = {min}");
 int res = max - min;
 Console.WriteLine($"Разница между максимальным и минимальным элементами массива = {res}");
