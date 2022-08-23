@@ -7,10 +7,10 @@ double[] array = new double[6];
 Random rand = new Random();
 double max = array[0];
 double min = array[0];
-double res = 0;
+double res;
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = rand.Next(-10, 101) * 0.1;
+    array[i] = rand.NextDouble() * 10;
     if (max < array[i]) max = array[i];
     if (array[i] < min) min = array[i];
 
@@ -21,3 +21,4 @@ Console.WriteLine($"Максимальное число в массиве = {max
 Console.WriteLine($"Минимальное число в массиве = {min}");
 res = max - min;
 Console.WriteLine($"Разница между максимальным и минимальным элементами массива = {res}");
+//Console.WriteLine($"{string.Join(", ", array.Select(x => Math.Round(x, 2)))}"); Если нужно округлить числа в массиве типа double
