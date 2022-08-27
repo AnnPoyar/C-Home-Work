@@ -18,25 +18,27 @@ double[,] FillMatrix(int rows, int columns, double leftRange = -10.00, double ri
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rand.double();
+            matrix[i, j] = rand.NextDouble() * 10;
         }
     }
 
     return matrix;
 }
-void PrintMatrix(int[,] matrix)
+void PrintMatrix(double[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write(matrix[i, j] + " ");
+            Console.Write("/ " + Math.Round(matrix[i, j], 1));
+            //Console.Write(matrix[i, j] + " ");
         }
         Console.WriteLine();
     }
 }
+
 Console.Write("Введите m и n через Enter "); 
 int m = Convert.ToInt32(Console.ReadLine());//число строк
 int n = Convert.ToInt32(Console.ReadLine());//число столбцов
-int[,] matrix = FillMatrix(m, n);
+double[,] matrix = FillMatrix(m, n);
 PrintMatrix(matrix);
