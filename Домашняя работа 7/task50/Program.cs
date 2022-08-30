@@ -36,22 +36,35 @@ void PrintMatrix(int[,] matrix)
             Console.Write(matrix[i, j] + " ");
         }
         Console.WriteLine();
+
     }
 }
 
 
-Console.Write("Введите число строк m и число столбцов n двумерного массива через Enter ");
+
+Console.Write("Введите число строк и число столбцов двумерного массива через Enter ");
 int m = Convert.ToInt32(Console.ReadLine());//число строк
 int n = Convert.ToInt32(Console.ReadLine());//число столбцов
 int[,] matrix = FillMatrix(m, n);
-PrintMatrix(matrix);
 Console.WriteLine();
-Console.WriteLine("Введите позицию элементв массива через Enter: a - строка, b - столбец");
-int a = Convert.ToInt32(Console.ReadLine());
-int b = Convert.ToInt32(Console.ReadLine());
-if (i == a && j == b)
+PrintMatrix(matrix);
+Console.WriteLine("Введите позицию элементов массива через Enter: строка, столбец");
+int numberRow = Convert.ToInt32(Console.ReadLine());
+int numberColumn = Convert.ToInt32(Console.ReadLine());
+for (int i = 0; i < matrix.GetLength(0); i++)
 {
-    Console.WriteLine(matrix[i, j]);
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+        if(numberRow > m | numberColumn > n
+        |numberRow < 0 | numberColumn < 0)
+        {
+            Console.WriteLine("Такого числа в массиве нет");
+            return;
+        }
+        if (matrix[i, j] == matrix[numberRow, numberColumn])
+        {
+            Console.WriteLine(matrix[i, j]);
+            return;
+        }
+    }
 }
-else Console.WriteLine("Такого числа нет в массиве");
-
