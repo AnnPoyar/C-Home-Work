@@ -51,16 +51,16 @@ PrintMatrix(matrix);
 Console.WriteLine("Введите позицию элементов массива через Enter: строка, столбец");
 int numberRow = Convert.ToInt32(Console.ReadLine());
 int numberColumn = Convert.ToInt32(Console.ReadLine());
+if (numberRow >= m | numberColumn >= n
+    | numberRow < 0 | numberColumn < 0)
+{
+    Console.WriteLine("Такого числа в массиве нет");
+    return;
+}
 for (int i = 0; i < matrix.GetLength(0); i++)
 {
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        if(numberRow > m | numberColumn > n
-        |numberRow < 0 | numberColumn < 0)
-        {
-            Console.WriteLine("Такого числа в массиве нет");
-            return;
-        }
         if (matrix[i, j] == matrix[numberRow, numberColumn])
         {
             Console.WriteLine(matrix[i, j]);
