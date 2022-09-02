@@ -63,7 +63,7 @@ void MinSumOfElementsOnRow(int[,] matrix)
     {
         if (minRowElement > array[i])
         {
-            array[i] = minRowElement;
+            minRowElement = array[i];
             minRowIndex = i;
         }
     }
