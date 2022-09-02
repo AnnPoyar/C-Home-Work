@@ -6,7 +6,7 @@
 // 10 09 08 07
 
 
-void PrintMatrix(int[,] matrix)
+void PrintMatrix(int[,] matrix) 
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -19,12 +19,13 @@ void PrintMatrix(int[,] matrix)
 }
 
 
-Console.Write("Введите количество строк и количество столбцов через Enter ");
+Console.Write("Введите количество строк:");
 int Rows = Convert.ToInt32(Console.ReadLine());//число строк
+Console.Write("Введите количество столбцов:");
 int Columns = Convert.ToInt32(Console.ReadLine());//число столбцов
 int[,] matrix = new int[Rows, Columns];
-Console.Write("Введите первое число");
-int digit = Convert.ToInt32(Console.ReadLine());//начало заполнения массива
+Console.Write("Введите начальное значение: ");
+int digit = Convert.ToInt32(Console.ReadLine());
 int i = 0, k = 0, j;
 while (i < Rows * Columns)
 {
@@ -34,7 +35,7 @@ while (i < Rows * Columns)
         matrix[k - 1, j] = digit++;
         i++;
     }
-    for (j = k; j < Rows - k - 1; j++)
+    for (j = k; j < Rows - k + 1; j++)
     {
         matrix[j, Columns - k] = digit++;
         i++;
@@ -46,7 +47,9 @@ while (i < Rows * Columns)
     }
     for (j = Rows - k - 1; j >= k; j--)
     {
-        matrix[j,k-1] = digit ++;
+        matrix[j, k-1] = digit ++;
+        i++;
     }
 }
-Console.Write(matrix[Rows, Columns]);
+
+ PrintMatrix(matrix);
